@@ -291,7 +291,7 @@ int APS5_VABI sceHttp2SetSslCallback(int id, HttpsCallback cb_func, void* user_a
     return Update(id, __func__, [&](auto& settings) {
         settings.sslCallback = cb_func;
         settings.sslArgument = user_arg;
-    });
+    }, false, true);
 }
 
 int APS5_VABI sceHttp2SetTimeOut(int id, uint32_t usec) {
